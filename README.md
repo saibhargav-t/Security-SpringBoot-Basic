@@ -45,16 +45,20 @@ A Spring Boot application demonstrating basic authentication with support for bo
    spring.jpa.hibernate.ddl-auto=update
    spring.datasource.initialization-mode=always
   ```
-🧠 Tips & Hints
-Spring Security auto-creates default schema for JDBC if spring.datasource.initialization-mode=always.
 
-Use Base64(username:password) for Basic Auth headers.
+## 🧠 Tips & Hints
+    - Spring Security auto-creates default schema for JDBC if spring.datasource.initialization-mode=always.
 
-📝 Customize for Your Project
-Replace /api/* and /user/* paths with your actual endpoints.
+    - Use Base64(username:password) for Basic Auth headers.
 
-Add /role/** checks or antMatchers("/admin/**").hasRole("ADMIN") as needed.
+## 📝 Customize for Your Project
 
-Secure method-level access with @PreAuthorize.
+    - Replace /api/* and /user/* paths with your actual endpoints.
 
-📄 License
+    - Add /role/** checks or antMatchers("/admin/**").hasRole("ADMIN") as needed.
+
+    - Secure method-level access with @PreAuthorize.
+
+
+
+
