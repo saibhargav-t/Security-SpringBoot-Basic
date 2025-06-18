@@ -72,3 +72,16 @@ To convert text to Bcrypt I used [Bcrypt Generator](https://www.bcryptcalculator
 - Add `/role/**` checks or antMatchers("/admin/**").hasRole("ADMIN") as needed.
 
 - Secure method-level access with `@PreAuthorize`.
+
+---
+
+## Contact
+
+If you hav any issue or questions please raise a issue or contact me at :
+  
+- [Mail](mailto:bhargavindian@outlook.com)
+- [LinkedIn](https://www.linkedin.com/in/saibhargav-t/)
+
+---
+
+## Thank You :)
