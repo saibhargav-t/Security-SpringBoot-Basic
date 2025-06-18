@@ -24,6 +24,15 @@ A Spring Boot application demonstrating basic authentication with support for bo
 
 ---
 
+## Password encoding strategies 
+
+It also explains password encoding strategies like:
+
+noop – for quick local testing ({noop}password)
+
+bcrypt – the recommended way for storing passwords securely in production.
+To convert text to Bcrypt I used [Bcrypt Generator](https://www.bcryptcalculator.com/).
+
 ## 🔧 Setup & Configuration
 
 1. **Clone the repository**
@@ -35,31 +44,31 @@ A Spring Boot application demonstrating basic authentication with support for bo
 
 2. **Configure database:**
 
-   In `src/main/resources/application.properties` add your DB settings. For example (PostgreSQL):
+   In `src/main/resources/application.properties` add your DB settings. For example (MySQL):
 
 ```properties
-   spring.datasource.url=jdbc:postgresql://localhost:5432/mydb
+   spring.datasource.url=jdbc:mysql://localhost:3306/mydb
    spring.datasource.username=myuser
    spring.datasource.password=mypass
 
    spring.jpa.hibernate.ddl-auto=update
    spring.datasource.initialization-mode=always
 ```
+
 ---
 
 ## 🧠 Tips & Hints
+
 - Spring Security auto-creates default schema for JDBC if spring.datasource.initialization-mode=always.
 
 - Use Base64(username:password) for Basic Auth headers.
+  
 ---
+
 ## 📝 Customize for Your Project
 
-- Replace /api/* and /user/* paths with your actual endpoints.
+- Replace `/api/*` and /user/* paths with your actual endpoints.
 
-- Add /role/** checks or antMatchers("/admin/**").hasRole("ADMIN") as needed.
+- Add `/role/**` checks or antMatchers("/admin/**").hasRole("ADMIN") as needed.
 
-- Secure method-level access with @PreAuthorize.
-
-
-
-
+- Secure method-level access with `@PreAuthorize`.
