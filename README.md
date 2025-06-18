@@ -24,7 +24,7 @@ A Spring Boot application demonstrating basic authentication with support for bo
 
 ---
 
-## Password encoding strategies 
+## Password encoding strategies
 
 It also explains password encoding strategies like:
 
