@@ -48,17 +48,17 @@ A Spring Boot application demonstrating basic authentication with support for bo
 ---
 
 ## 🧠 Tips & Hints
-    - Spring Security auto-creates default schema for JDBC if spring.datasource.initialization-mode=always.
+- Spring Security auto-creates default schema for JDBC if spring.datasource.initialization-mode=always.
 
-    - Use Base64(username:password) for Basic Auth headers.
-
+- Use Base64(username:password) for Basic Auth headers.
+---
 ## 📝 Customize for Your Project
 
-    - Replace /api/* and /user/* paths with your actual endpoints.
+- Replace /api/* and /user/* paths with your actual endpoints.
 
-    - Add /role/** checks or antMatchers("/admin/**").hasRole("ADMIN") as needed.
+- Add /role/** checks or antMatchers("/admin/**").hasRole("ADMIN") as needed.
 
-    - Secure method-level access with @PreAuthorize.
+- Secure method-level access with @PreAuthorize.
 
 
 
