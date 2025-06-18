@@ -10,18 +10,32 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
-@Configuration
+//@Configuration
 public class UsersConfigFile {
 
-    @Bean
+    /*
+     * This method creates an in-memory user details manager with two users:
+     * "rama" with roles "USER" and "ADMIN", and "krishna" with roles "USER",
+     * "ADMIN", and "MANAGER".
+     * The passwords are stored in plain text (using "{noop}" prefix).
+     */
+    // @Bean
     public InMemoryUserDetailsManager userDetailsManager() {
         UserDetails rama = User.builder().username("rama").password("{noop}1234").roles("USER", "ADMIN").build();
         UserDetails krishna = User.builder().username("krishna").password("{noop}1234")
                 .roles("USER", "ADMIN", "MANAGER").build();
         return new InMemoryUserDetailsManager(rama, krishna);
     }
+    /*
+     * This method configures the security filter chain for the application.
+     * It defines the authorization rules for different HTTP methods and endpoints.
+     * The rules specify which roles are allowed to access specific endpoints
+     * and what actions (GET, POST, DELETE, PUT, PATCH) can be performed by those
+     * roles.
+     * The HTTP Basic authentication is enabled, and CSRF protection is disabled.
+     */
 
-    @Bean
+    // @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         String admin = "ADMIN";
@@ -47,3 +61,4 @@ public class UsersConfigFile {
 
     }
 }
+

@@ -14,6 +14,13 @@ import org.springframework.security.web.SecurityFilterChain;
 //@Configuration
 public class JdbcCustomTableConfig {
 
+    /*
+     * This method creates a JdbcUserDetailsManager bean that uses the provided
+     * DataSource to manage user details.
+     * It allows for user authentication and authorization based on data stored in a
+     * relational database.
+     * The queries are customized to retrieve user information from custom tables.
+     */
     //@Bean
     public UserDetailsManager userDetailsManager(DataSource datasource) {
         JdbcUserDetailsManager theUserDetailsManager = new JdbcUserDetailsManager(datasource);

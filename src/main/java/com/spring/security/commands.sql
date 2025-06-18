@@ -9,8 +9,10 @@ select * from students;
 
 drop table student;
 
+# default schema
 create table users (username varchar(50) not null, password varchar(50) not null, enabled TINYINT not null, PRIMARY KEY (username));
 
+# custom schema
 create table members (user_id varchar(50) not null, pw varchar(68) not null, active TINYINT not null, PRIMARY KEY (user_id));
 
 insert into users VALUES 
@@ -26,8 +28,10 @@ insert into members VALUES
 ("ravana","{bcrypt}$2a$10$nyAs5vh2TPL5gVbQzJinX.aR6ICXg.JAwp0RQT29TC1EshTMIA28G",0);
 select * from users;
 
+# default schema
 create table authorities (username varchar(50) not null, authority varchar(50) not null, unique key authorities_idx_1 (username, authority), constraint authorities_ibfk_1 FOREIGN KEY(username) references users(username));
 
+# custom schema
 create table roles (user_id varchar(50) not null, role varchar(50) not null, unique key roles_idx_1 (user_id, role), constraint roles_ibfk_1 FOREIGN KEY(user_id) references members(user_id));
 
 desc authorities;
@@ -47,5 +51,7 @@ insert into users values ("hanuman","{bcrypt}$2a$10$b32tj2.CBSDgI3zLxSiBbOLccXP7
 insert into authorities values ("hanuman","ROLE_MANAGER");
 drop table if exists users;
 drop table if exists authorities;
+# For BCrypt password hashing
+-- The password length is 60 characters, but we use 68 to accommodate the prefix "{bcrypt}$"
 create table users (username varchar(50) not null, password varchar(68) not null, enabled TINYINT not null, PRIMARY KEY (username));
 

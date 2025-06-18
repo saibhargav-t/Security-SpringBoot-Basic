@@ -7,9 +7,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+
 @Entity
 @Table(name = "students")
 public class Student {
+
 
     public Student() {
         // Default Constructor JPA
@@ -70,4 +72,15 @@ public class Student {
         return "Student [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
     }
 
+    /*
+     * This is entity class for Student.
+     * It contains fields for id, firstName, lastName, and email.
+     * It uses JPA annotations to map the class to a database table named
+     * "students".
+     * The class includes a default constructor, a parameterized constructor,getters
+     * and setters for each field, and a toString method for easy representation.
+     * The id field is the primary key and is generated automatically.
+     * The firstName, lastName, and email fields are mapped to corresponding columns
+     * in the database table.
+     */
 }

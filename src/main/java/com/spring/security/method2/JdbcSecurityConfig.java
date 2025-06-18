@@ -14,11 +14,25 @@ import org.springframework.security.web.SecurityFilterChain;
 //@Configuration
 public class JdbcSecurityConfig {
 
+    /*
+     * This method creates a JdbcUserDetailsManager bean that uses the provided
+     * DataSource to manage user details.
+     * It allows for user authentication and authorization based on data stored in a
+     * relational database.
+     */
+
     //@Bean
     public UserDetailsManager userDetailsManager(DataSource datasource) {
         return new JdbcUserDetailsManager(datasource);
     }
 
+    /*
+     * This method configures the security filter chain for the application.
+     * It defines the authorization rules for different HTTP methods and endpoints.
+     * The rules specify which roles are allowed to access specific endpoints
+     * and what actions (GET, POST, DELETE, PUT, PATCH) can be performed by those
+     * roles.
+     */
     //@Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
