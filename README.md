@@ -37,14 +37,15 @@ A Spring Boot application demonstrating basic authentication with support for bo
 
    In `src/main/resources/application.properties` add your DB settings. For example (PostgreSQL):
 
-   ```properties
+```properties
    spring.datasource.url=jdbc:postgresql://localhost:5432/mydb
    spring.datasource.username=myuser
    spring.datasource.password=mypass
 
    spring.jpa.hibernate.ddl-auto=update
    spring.datasource.initialization-mode=always
-  ```
+```
+---
 
 ## 🧠 Tips & Hints
     - Spring Security auto-creates default schema for JDBC if spring.datasource.initialization-mode=always.
